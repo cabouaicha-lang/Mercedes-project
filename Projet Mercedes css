@@ -1,0 +1,43 @@
+/* OPTIMISATION VISUELLE DES CARTES ET DES IMAGES DÉTOURÉES */
+.category-card {
+  background: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  height: 220px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.category-card img {
+  max-width: 55%;
+  height: auto;
+  max-height: 160px;
+  object-fit: contain; /* Empêche le dépaquetage ou la déformation des véhicules */
+  filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.15)); /* Effet d'ombre sous le véhicule */
+}
+
+.offer-img-wrapper {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  padding: 10px;
+}
+
+.offer-img-wrapper img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.12));
+}
