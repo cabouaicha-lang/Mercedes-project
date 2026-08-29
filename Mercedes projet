@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz France</title>
+  
+  <link rel="stylesheet" href="mercedes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barre supérieure -->
+  <div class="top-bar">
+    <div class="top-container">
+      <span>Mercedes-Benz France</span>
+      <div class="top-links">
+        <a href="#">Concessionnaires</a>
+        <a href="#">Essai privé</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <img class="mb-star" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Logo Mercedes-Benz">
+        <span class="logo-text">MERCEDES-BENZ</span>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#categories">Modèles</a>
+        <a href="#offres">Offres</a>
+        <a href="#services">Services</a>
+      </nav>
+
+      <a href="#configurator" class="btn-blue">Configurer</a>
+    </div>
+  </header>
+
+  <!-- Section Hero -->
+  <section class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1920&q=80" alt="Mercedes-AMG GT">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <span class="eyebrow">NOUVEAUTÉ 2026</span>
+      <h1>VISION AMG GT</h1>
+      <p>L'alliance absolue du luxe progressif et de la performance.</p>
+      <div class="hero-btns">
+        <a href="#categories" class="btn-white">Découvrir</a>
+        <a href="#configurator" class="btn-outline">Configurer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sélecteur de Marque -->
+  <div class="brand-switch-container">
+    <div class="brand-switch">
+      <button class="brand-tab active">Mercedes-Benz</button>
+      <button class="brand-tab amg-tab">///AMG</button>
+      <button class="brand-tab maybach-tab">MAYBACH</button>
+    </div>
+  </div>
+
+  <!-- Section Catégories de Véhicules -->
+  <section class="categories-section" id="categories">
+    <div class="main-container">
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-info">
+            <span class="subtext">Découvrez nos modèles</span>
+            <h2>Berlines</h2>
+          </div>
+          <img src="https://www.mercedes-benz.fr/passengercars/models/saloon/_jcr_content/root/responsivegrid/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Berlines Mercedes-Benz">
+        </div>
+
+        <div class="category-card">
+          <div class="category-info">
+            <span class="subtext">Découvrez nos modèles</span>
+            <h2>SUV</h2>
+          </div>
+          <img src="https://www.mercedes-benz.fr/passengercars/models/suv/_jcr_content/root/responsivegrid/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="SUV Mercedes-Benz">
+        </div>
+
+        <div class="category-card">
+          <div class="category-info">
+            <span class="subtext">Découvrez nos modèles</span>
+            <h2>Breaks / Shooting Brakes</h2>
+          </div>
+          <img src="https://www.mercedes-benz.fr/passengercars/models/estate/_jcr_content/root/responsivegrid/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Breaks Mercedes-Benz">
+        </div>
+
+        <!-- Carte Compactes avec visuel HD Classe A -->
+        <div class="category-card">
+          <div class="category-info">
+            <span class="subtext">Découvrez nos modèles</span>
+            <h2>Compactes</h2>
+          </div>
+          <img src="https://www.mercedes-benz.fr/passengercars/models/hatchback/class-a/pad/_jcr_content/root/responsivegrid/tab_container/tab_item/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Mercedes-Benz Classe A Compacte">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Offres du Moment -->
+  <section class="offers-section" id="offres">
+    <div class="main-container">
+      <h2 class="section-title">NOS OFFRES</h2>
+      
+      <div class="offers-grid">
+        <!-- Offre 1 : Classe A 180 -->
+        <div class="offer-card">
+          <div class="offer-img-wrapper">
+            <img src="https://www.mercedes-benz.fr/passengercars/models/hatchback/class-a/pad/_jcr_content/root/responsivegrid/tab_container/tab_item/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Mercedes Classe A 180">
+          </div>
+          <div class="offer-body">
+            <h3>Classe A 180 Progressive Line</h3>
+            <p class="specs">100 kW + 10 kW (136 ch + 14 ch)<br>Essence | Automatique</p>
+            <div class="price-box">
+              <span class="price-label">Prix conseillé constructeur (TVAC)</span>
+              <span class="price-val">38 550 €</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Éclairage d'ambiance</span>
+              <span class="tag">Projecteurs LED Haute Performance</span>
+            </div>
+            <div class="energy-badge energy-c">Classe énergétique C</div>
+            <a href="#" class="offer-link">Vers le Showroom en ligne</a>
+          </div>
+        </div>
+
+        <!-- Offre 2 : Classe C 200 -->
+        <div class="offer-card">
+          <div class="offer-img-wrapper">
+            <img src="https://www.mercedes-benz.fr/passengercars/models/saloon/class-c/pad/_jcr_content/root/responsivegrid/tab_container/tab_item/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Mercedes Classe C 200">
+          </div>
+          <div class="offer-body">
+            <h3>Classe C 200 Berline Avantgarde Line</h3>
+            <p class="specs">150 kW + 17 kW (204 ch + 23 ch)<br>Essence | Automatique</p>
+            <div class="price-box">
+              <span class="price-label">Loyers mensuels (TVAC)</span>
+              <span class="price-val">836.58 €</span>
+              <span class="price-sub">Prix conseillé : 56 000 €</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Intérieur AVANTGARDE</span>
+              <span class="tag">Extérieur AVANTGARDE</span>
+            </div>
+            <div class="energy-badge energy-d">Classe énergétique D</div>
+            <a href="#" class="offer-link">Vers le Showroom en ligne</a>
+          </div>
+        </div>
+
+        <!-- Offre 3 : GLE 350 -->
+        <div class="offer-card">
+          <div class="offer-img-wrapper">
+            <img src="https://www.mercedes-benz.fr/passengercars/models/suv/gle/pad/_jcr_content/root/responsivegrid/tab_container/tab_item/simple_teaser/simple_teaser_item.component.dam.1708422774187.png" alt="Mercedes GLE 350">
+          </div>
+          <div class="offer-body">
+            <h3>GLE 350 de Hybrid EQ 4MATIC AMG Line</h3>
+            <p class="specs">145 kW + 115 kW (197 ch + 156 ch)<br>Hybride rechargeable diesel | Automatique</p>
+            <div class="price-box">
+              <span class="price-label">Loyers mensuels (TVAC)</span>
+              <span class="price-val">1 602.22 €</span>
+              <span class="price-sub">Prix conseillé : 107 251 €</span>
+            </div>
+            <div class="energy-badge energy-a">Classe énergétique A</div>
+            <a href="#" class="offer-link">Vers le Showroom en ligne</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services -->
+  <section class="services-section" id="services">
+    <div class="main-container">
+      <h2 class="section-title">SERVICES ET ACCESSOIRES</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Service Après-Vente Mercedes">
+          <div class="service-content">
+            <h3>Rappels en cours - Produits et véhicules</h3>
+            <p>Vérifiez à l'aide de notre outil en ligne et de votre numéro VIN à 17 caractères les rappels éventuels.</p>
+            <a href="#" class="btn-blue-rect">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Brochures Mercedes-Benz">
+          <div class="service-content">
+            <h3>Brochures véhicules</h3>
+            <p>Retrouvez les dernières versions de nos brochures véhicules.</p>
+            <a href="#" class="btn-blue-rect">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page officiel -->
+  <footer class="main-footer">
+    <div class="back-to-top">
+      <a href="#">&uarr; Haut de page</a>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Nos gammes de véhicules</h4>
+        <ul>
+          <li><a href="#">Compactes</a></li>
+          <li><a href="#">SUV</a></li>
+          <li><a href="#">Berlines</a></li>
+          <li><a href="#">Breaks & Shooting Brakes</a></li>
+          <li><a href="#">Coupés</a></li>
+          <li><a href="#">Cabriolets</a></li>
+          <li><a href="#">Gamme Mercedes-AMG</a></li>
+          <li><a href="#">Gamme Mercedes-Maybach</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Électrique et Hybride</h4>
+        <ul>
+          <li><a href="#">Notre vision de la mobilité</a></li>
+          <li><a href="#">Recharger votre véhicule</a></li>
+          <li><a href="#">Équipements de recharge</a></li>
+          <li><a href="#">Gamme 100% électrique</a></li>
+          <li><a href="#">Gamme Hybride Rechargeable</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Projet Achat</h4>
+        <ul>
+          <li><a href="#">Achat Véhicules Neufs</a></li>
+          <li><a href="#">Achat Véhicules d'Occasion</a></li>
+          <li><a href="#">Label Mercedes-Benz Certified</a></li>
+          <li><a href="#">Offres du moment</a></li>
+          <li><a href="#">Réserver un essai</a></li>
+          <li><a href="#">Leasing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Prendre rendez-vous SAV</a></li>
+          <li><a href="#">Services connectés</a></li>
+          <li><a href="#">Service Après-Vente</a></li>
+          <li><a href="#">Notices d'utilisation</a></li>
+          <li><a href="#">Assistance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Espace contact</a></li>
+          <li><a href="#">Contact Business Solution</a></li>
+          <li><a href="#">Enewsletter</a></li>
+          <li><a href="#">Nous rejoindre</a></li>
+          <li><a href="#">Rechercher un Distributeur</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
