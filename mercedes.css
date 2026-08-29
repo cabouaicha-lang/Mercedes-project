@@ -1,0 +1,2709 @@
+/* =====================================================
+   MERCEDES-BENZ PREMIUM WEBSITE
+   CSS ONLY
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #050505;
+    color: #111;
+    overflow-x: hidden;
+}
+
+body,
+button,
+a {
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: #111;
+    color: white;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --black: #050505;
+    --black-soft: #0d0d0d;
+
+    --white: #ffffff;
+
+    --grey-1: #f5f5f5;
+    --grey-2: #e9e9e9;
+    --grey-3: #cfcfcf;
+    --grey-4: #888;
+    --grey-5: #555;
+
+    --line: rgba(0, 0, 0, .12);
+    --line-light: rgba(255, 255, 255, .16);
+
+    --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+
+/* =====================================================
+   MENU CHECKBOX
+===================================================== */
+
+#menu-toggle {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 88px;
+
+    z-index: 9999;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.82)
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+
+.header-inner {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+
+    width: 27px;
+    height: 1.5px;
+
+    background: white;
+
+    transition:
+        width .4s var(--ease),
+        transform .4s var(--ease);
+}
+
+.menu-button:hover span:first-child {
+    width: 20px;
+}
+
+.menu-button:hover span:last-child {
+    width: 20px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.brand {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mercedes-logo {
+    width: 48px;
+    height: 48px;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+    transition:
+        transform .7s var(--ease),
+        opacity .3s ease;
+}
+
+.brand:hover .mercedes-logo {
+    transform: rotate(180deg) scale(1.05);
+}
+
+
+/* =====================================================
+   DESKTOP NAV
+===================================================== */
+
+.desktop-nav {
+    margin-left: 65px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+.desktop-nav a {
+    position: relative;
+
+    color: #a7a7a7;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+    transition:
+        color .3s ease;
+}
+
+.desktop-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 0;
+    height: 1px;
+
+    background: white;
+
+    transition:
+        width .4s var(--ease);
+}
+
+.desktop-nav a:hover {
+    color: white;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HEADER RIGHT
+===================================================== */
+
+.header-right {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.heart-button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 31px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition:
+        transform .35s var(--ease),
+        color .3s ease;
+}
+
+.heart-button:hover {
+    transform: scale(1.18);
+    color: #ddd;
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.login-icon {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #777,
+            #333
+        );
+
+    overflow: hidden;
+}
+
+.login-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    top: 9px;
+    left: 16px;
+
+    background: white;
+}
+
+.login-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 21px;
+    height: 11px;
+
+    border-radius: 14px 14px 0 0;
+
+    left: 10px;
+    bottom: 8px;
+
+    background: white;
+}
+
+.login-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.login-text small {
+    color: #888;
+
+    font-size: 9px;
+}
+
+.login-text strong {
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-nav {
+    position: fixed;
+
+    z-index: 9998;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    padding: 30px 7%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #080808,
+            #151515
+        );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    transform: translateY(-100%);
+
+    transition:
+        transform .7s var(--ease);
+}
+
+#menu-toggle:checked ~ .mobile-nav {
+    transform: translateY(0);
+}
+
+.mobile-nav-header {
+    position: absolute;
+
+    top: 30px;
+    left: 7%;
+    right: 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav-header span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+.mobile-nav-header label {
+    font-size: 35px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+}
+
+.mobile-nav > a {
+    position: relative;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+
+    font-size: clamp(35px, 8vw, 65px);
+
+    font-weight: 300;
+
+    letter-spacing: -2px;
+
+    transition:
+        padding-left .4s var(--ease),
+        color .3s ease;
+}
+
+.mobile-nav > a:hover {
+    padding-left: 15px;
+    color: #bbb;
+}
+
+.mobile-nav > a span {
+    float: right;
+
+    margin-top: 12px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 760px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    color: white;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/73167c9484678817b7dd6249c55b2fa54ec8a178-2704x1521.webp?auto=format&fit=max&q=75&w=1244");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.06);
+
+    animation:
+        heroZoom 13s var(--ease) forwards;
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.06);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88) 0%,
+            rgba(0,0,0,.55) 32%,
+            rgba(0,0,0,.10) 75%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.75),
+            transparent 55%
+        );
+}
+
+
+/* =====================================================
+   HERO LABEL
+===================================================== */
+
+.hero-label {
+    position: absolute;
+
+    top: 130px;
+    left: 7%;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.hero-label span {
+    width: 35px;
+    height: 1px;
+
+    background: white;
+}
+
+.hero-label p {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #ccc;
+}
+
+
+/* =====================================================
+   PAUSE
+===================================================== */
+
+.pause-button {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 125px;
+    right: 6%;
+
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.pause-button:hover {
+    background: white;
+
+    transform: scale(1.08);
+}
+
+.pause-button span {
+    width: 2px;
+    height: 13px;
+
+    background: white;
+
+    transition:
+        background .3s ease;
+}
+
+.pause-button:hover span {
+    background: black;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 7%;
+    bottom: 16%;
+
+    max-width: 720px;
+}
+
+.eyebrow {
+    display: block;
+
+    color: #d0d0d0;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 500;
+}
+
+.hero-content h1 {
+    margin-top: 24px;
+
+    font-size: clamp(62px, 8vw, 112px);
+
+    font-weight: 300;
+
+    line-height: .88;
+
+    letter-spacing: -7px;
+}
+
+.hero-content > p {
+    max-width: 470px;
+
+    margin-top: 30px;
+
+    color: #d2d2d2;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.button {
+    min-height: 52px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+
+    transition:
+        background .4s var(--ease),
+        color .4s var(--ease),
+        transform .4s var(--ease);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button.primary {
+    background: white;
+    color: black;
+}
+
+.button.primary:hover {
+    background: #111;
+    color: white;
+}
+
+.button.secondary {
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.65);
+}
+
+.button.secondary:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =====================================================
+   HERO BOTTOM
+===================================================== */
+
+.hero-bottom {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 7%;
+    right: 7%;
+
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-scroll {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    position: relative;
+
+    width: 40px;
+    height: 1px;
+
+    background: rgba(255,255,255,.5);
+}
+
+.scroll-line::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: white;
+
+    animation:
+        scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.hero-counter {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.hero-counter strong {
+    font-size: 11px;
+}
+
+.hero-counter span {
+    width: 70px;
+    height: 1px;
+
+    background: rgba(255,255,255,.4);
+}
+
+.hero-counter small {
+    color: #888;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   QUICK MENU
+===================================================== */
+
+.quick-menu {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.quick-menu a {
+    min-height: 155px;
+
+    padding: 32px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    border-right: 1px solid #ddd;
+
+    transition:
+        background .4s var(--ease),
+        padding .4s var(--ease);
+}
+
+.quick-menu a:last-child {
+    border-right: none;
+}
+
+.quick-menu a:hover {
+    background: #f3f3f3;
+
+    padding-left: 40px;
+}
+
+.quick-menu .number {
+    color: #999;
+
+    font-size: 9px;
+}
+
+.quick-menu div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.quick-menu strong {
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.quick-menu small {
+    color: #777;
+
+    font-size: 10px;
+}
+
+.quick-menu b {
+    margin-left: auto;
+
+    color: #111;
+
+    font-size: 18px;
+
+    font-weight: 300;
+}
+
+
+/* =====================================================
+   VEHICLES
+===================================================== */
+
+.vehicles {
+    padding: 140px 6%;
+
+    background: #f3f3f3;
+}
+
+.section-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    margin-bottom: 65px;
+}
+
+.dark {
+    color: #777;
+}
+
+.section-header h2 {
+    margin-top: 18px;
+
+    font-size: clamp(55px, 6.5vw, 92px);
+
+    font-weight: 300;
+
+    line-height: .88;
+
+    letter-spacing: -6px;
+}
+
+.section-description {
+    max-width: 430px;
+}
+
+.section-description p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.section-description a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #111;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+.section-description a span {
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   VEHICLE GRID
+===================================================== */
+
+.vehicle-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.vehicle-card {
+    position: relative;
+
+    height: 560px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    cursor: pointer;
+}
+
+.vehicle-card-large {
+    height: 650px;
+}
+
+
+/* =====================================================
+   VEHICLE IMAGE
+===================================================== */
+
+.vehicle-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        transform 1.2s var(--ease),
+        filter .7s ease;
+}
+
+
+/*
+   VRAIES PHOTOS MERCEDES-BENZ
+*/
+
+.cla {
+    background-image:
+        url("https://api.media.mercedes-benz.com/jsonapi/image/deliver/2e69bc46-f5c2-4b53-a814-90a6e6e5dbeb/320");
+
+    background-position: center;
+}
+
+.glc {
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/73167c9484678817b7dd6249c55b2fa54ec8a178-2704x1521.webp?auto=format&fit=max&q=75&w=1244");
+
+    background-position: center;
+}
+
+.classe-c {
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/f059f65e13522e8004bd98a2433a5ffdafc5799d-1442x812.jpg?auto=format&fit=max&q=75&w=1244");
+
+    background-position: center;
+}
+
+.classe-g {
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/a005c35137c58f4de216f73d174360261732be52-1440x810.jpg?auto=format&fit=max&q=75&w=1244");
+
+    background-position: center;
+}
+
+
+/* =====================================================
+   VEHICLE HOVER
+===================================================== */
+
+.vehicle-card:hover .vehicle-image {
+    transform: scale(1.08);
+
+    filter:
+        brightness(1.05)
+        contrast(1.04);
+}
+
+
+/* =====================================================
+   VEHICLE SHINE
+===================================================== */
+
+.vehicle-shine {
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 45%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.15),
+            transparent
+        );
+
+    transform: skewX(-15deg);
+
+    z-index: 2;
+
+    transition:
+        left 1s var(--ease);
+}
+
+.vehicle-card:hover .vehicle-shine {
+    left: 130%;
+}
+
+
+/* =====================================================
+   VEHICLE GRADIENT
+===================================================== */
+
+.vehicle-gradient {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.45) 35%,
+            transparent 72%
+        );
+}
+
+
+/* =====================================================
+   VEHICLE CONTENT
+===================================================== */
+
+.vehicle-content {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 35px;
+    right: 35px;
+    bottom: 35px;
+
+    color: white;
+}
+
+.vehicle-category {
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+
+    color: #c9c9c9;
+}
+
+.vehicle-content h3 {
+    margin-top: 10px;
+
+    font-size: clamp(42px, 4vw, 60px);
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.vehicle-content p {
+    margin-top: 9px;
+
+    color: #ddd;
+
+    font-size: 12px;
+}
+
+.vehicle-content a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 22px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid white;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+.vehicle-content a b {
+    font-size: 15px;
+
+    font-weight: 300;
+}
+
+.vehicle-index {
+    position: absolute;
+
+    z-index: 4;
+
+    top: 25px;
+    right: 28px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   ELECTRIC
+===================================================== */
+
+.electric {
+    position: relative;
+
+    min-height: 820px;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.electric-background {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/4ca772d98720bb3d5b343748b8c05eb971e575c6-1920x2560.webp?auto=format&fit=max&q=75&w=960");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.electric-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.55) 38%,
+            rgba(0,0,0,.08) 80%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.65),
+            transparent 60%
+        );
+}
+
+.electric-content {
+    position: relative;
+
+    z-index: 3;
+
+    padding: 170px 7%;
+
+    max-width: 850px;
+}
+
+.electric-content h2 {
+    margin-top: 25px;
+
+    font-size: clamp(58px, 7.5vw, 105px);
+
+    font-weight: 300;
+
+    line-height: .87;
+
+    letter-spacing: -7px;
+}
+
+.electric-content p {
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    color: #d1d1d1;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.electric-content .button {
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   ELECTRIC STATS
+===================================================== */
+
+.electric-stats {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 7%;
+    right: 7%;
+    bottom: 45px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(255,255,255,.25);
+
+    padding-top: 25px;
+}
+
+.electric-stats div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.electric-stats strong {
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+.electric-stats small {
+    position: absolute;
+
+    margin-left: 31px;
+    margin-top: 2px;
+
+    font-size: 12px;
+}
+
+.electric-stats span {
+    color: #999;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   CONFIGURATOR
+===================================================== */
+
+.configurator {
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 720px;
+
+    background: #e8e8e8;
+}
+
+.configurator-content {
+    padding: 110px 13%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.configurator-content h2 {
+    margin-top: 20px;
+
+    font-size: clamp(50px, 5vw, 78px);
+
+    font-weight: 300;
+
+    line-height: .9;
+
+    letter-spacing: -5px;
+}
+
+.configurator-content > p {
+    max-width: 420px;
+
+    margin-top: 28px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.configurator-buttons {
+    margin-top: 30px;
+}
+
+.black-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 18px 25px;
+
+    background: #080808;
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background .35s ease,
+        transform .35s var(--ease);
+}
+
+.black-button:hover {
+    background: #333;
+
+    transform: translateY(-3px);
+}
+
+.black-button span {
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   CONFIGURATOR META
+===================================================== */
+
+.configurator-meta {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px 25px;
+
+    max-width: 420px;
+
+    margin-top: 65px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #c7c7c7;
+}
+
+.configurator-meta span {
+    color: #888;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+.configurator-meta strong {
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   CONFIGURATOR VISUAL
+===================================================== */
+
+.configurator-visual {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #fafafa 0%,
+            #d7d7d7 30%,
+            #a8a8a8 75%,
+            #888 100%
+        );
+}
+
+.visual-glow {
+    position: absolute;
+
+    width: 600px;
+    height: 300px;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(255,255,255,.7);
+
+    filter: blur(100px);
+}
+
+.visual-circle {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(0,0,0,.09);
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   CONFIGURATOR REAL CAR
+===================================================== */
+
+.configurator-car-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://api.media.mercedes-benz.com/jsonapi/image/deliver/f4093d9d-61b4-4d81-9852-d5bf2bb1176b/320");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+    mix-blend-mode: multiply;
+
+    opacity: .92;
+
+    filter:
+        contrast(1.05)
+        saturate(.85);
+
+    transition:
+        transform 1s var(--ease);
+}
+
+.configurator-visual:hover .configurator-car-image {
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   VISUAL CAPTION
+===================================================== */
+
+.visual-caption {
+    position: absolute;
+
+    z-index: 5;
+
+    right: 40px;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+.visual-caption span {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.visual-caption strong {
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   TECHNOLOGY
+===================================================== */
+
+.technology {
+    padding: 145px 7%;
+
+    background: white;
+}
+
+.technology-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    margin-bottom: 75px;
+}
+
+.technology-header h2 {
+    margin-top: 20px;
+
+    font-size: clamp(55px, 6.5vw, 90px);
+
+    font-weight: 300;
+
+    line-height: .87;
+
+    letter-spacing: -6px;
+}
+
+.technology-header > p {
+    max-width: 420px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   TECHNOLOGY GRID
+===================================================== */
+
+.technology-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #ddd;
+}
+
+.technology-grid article {
+    min-height: 380px;
+
+    padding: 35px;
+
+    border-right: 1px solid #ddd;
+
+    transition:
+        background .4s var(--ease),
+        transform .4s var(--ease);
+}
+
+.technology-grid article:last-child {
+    border-right: none;
+}
+
+.technology-grid article:hover {
+    background: #f4f4f4;
+
+    transform: translateY(-5px);
+}
+
+.tech-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.tech-top span {
+    color: #999;
+
+    font-size: 9px;
+}
+
+.tech-top b {
+    font-size: 28px;
+
+    font-weight: 200;
+}
+
+.technology-grid h3 {
+    margin-top: 65px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+.technology-grid p {
+    margin-top: 17px;
+
+    max-width: 250px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.technology-grid article > a {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    border-bottom: 1px solid #111;
+
+    padding-bottom: 6px;
+}
+
+
+/* =====================================================
+   OFFERS
+===================================================== */
+
+.offers {
+    display: grid;
+
+    grid-template-columns: 56% 44%;
+
+    min-height: 680px;
+
+    background: #eee;
+}
+
+.offers-image {
+    min-height: 600px;
+
+    background-image:
+        url("https://g-class.mercedes-benz.com/media/images/a005c35137c58f4de216f73d174360261732be52-1440x810.jpg?auto=format&fit=max&q=75&w=1244");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        transform 1.2s var(--ease);
+}
+
+.offers:hover .offers-image {
+    transform: scale(1.025);
+}
+
+.offers-content {
+    padding: 100px 13%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.offers-content h2 {
+    margin-top: 20px;
+
+    font-size: clamp(48px, 5vw, 76px);
+
+    font-weight: 300;
+
+    line-height: .9;
+
+    letter-spacing: -5px;
+}
+
+.offers-content p {
+    max-width: 420px;
+
+    margin-top: 28px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.offers-buttons {
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    padding: 100px 7%;
+
+    background: #080808;
+
+    color: white;
+}
+
+.contact-inner {
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 60px;
+
+    border: 1px solid #292929;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,.07),
+            transparent 40%
+        );
+}
+
+.contact h2 {
+    margin-top: 20px;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    font-weight: 300;
+
+    line-height: .92;
+
+    letter-spacing: -4px;
+}
+
+.contact-button {
+    min-width: 180px;
+
+    min-height: 55px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+}
+
+.contact-button:hover {
+    background: white;
+
+    color: black;
+}
+
+.contact-button span {
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 80px 7% 25px;
+
+    background: #050505;
+
+    color: white;
+}
+
+
+/* =====================================================
+   FOOTER TOP
+===================================================== */
+
+.footer-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid #242424;
+}
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.footer-logo {
+    width: 52px;
+    height: 52px;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+.footer-brand div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.footer-brand strong {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+}
+
+.footer-brand span {
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.footer-social {
+    display: flex;
+
+    gap: 28px;
+}
+
+.footer-social a {
+    color: #888;
+
+    font-size: 10px;
+
+    transition: color .3s ease;
+}
+
+.footer-social a:hover {
+    color: white;
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-columns {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 50px;
+
+    padding: 65px 0;
+
+    border-bottom: 1px solid #242424;
+}
+
+.footer-columns div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.footer-columns h4 {
+    margin-bottom: 10px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.footer-columns a {
+    color: #999;
+
+    font-size: 10px;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.footer-columns a:hover {
+    color: white;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback {
+    position: fixed;
+
+    z-index: 9997;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 130px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    writing-mode: vertical-rl;
+
+    background: #087fd3;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.2);
+
+    transition:
+        width .3s var(--ease);
+}
+
+.feedback:hover {
+    width: 52px;
+}
+
+
+/* =====================================================
+   ASSISTANT
+===================================================== */
+
+.assistant {
+    position: fixed;
+
+    z-index: 9997;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 70px;
+    height: 70px;
+
+    padding: 4px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.28);
+
+    transition:
+        transform .4s var(--ease);
+}
+
+.assistant:hover {
+    transform: scale(1.08);
+}
+
+.assistant-ring {
+    width: 100%;
+    height: 100%;
+
+    padding: 2px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #777
+        );
+}
+
+.assistant-face {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #f0d0bd 0 20%,
+            transparent 21%
+        ),
+        linear-gradient(
+            145deg,
+            #eee,
+            #999
+        );
+}
+
+.assistant-face span {
+    position: absolute;
+
+    left: 35%;
+    top: 50%;
+
+    width: 30%;
+    height: 8px;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,.3);
+}
+
+.assistant > i {
+    position: absolute;
+
+    right: 1px;
+    bottom: 1px;
+
+    width: 15px;
+    height: 15px;
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    background: #35b86b;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .quick-menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-menu a:nth-child(2) {
+        border-right: none;
+    }
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-card,
+    .vehicle-card-large {
+        height: 600px;
+    }
+
+    .configurator {
+        grid-template-columns: 1fr;
+    }
+
+    .configurator-content {
+        min-height: 600px;
+    }
+
+    .configurator-visual {
+        min-height: 600px;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .technology-grid article:nth-child(2) {
+        border-right: none;
+    }
+
+    .offers {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-image {
+        min-height: 550px;
+    }
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+    /* HEADER */
+
+    .header {
+        height: 76px;
+    }
+
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mercedes-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand {
+        width: 45px;
+        height: 45px;
+    }
+
+    .login-text {
+        display: none;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .heart-button {
+        font-size: 27px;
+    }
+
+    .login-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 720px;
+    }
+
+    .hero-background {
+        background-position:
+            65% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.88),
+                rgba(0,0,0,.30)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(0,0,0,.82),
+                transparent 60%
+            );
+    }
+
+    .hero-label {
+        left: 7%;
+        top: 105px;
+    }
+
+    .pause-button {
+        top: 100px;
+        right: 7%;
+
+        width: 47px;
+        height: 47px;
+    }
+
+    .hero-content {
+        left: 7%;
+        right: 7%;
+        bottom: 14%;
+    }
+
+    .hero-content h1 {
+        font-size: 57px;
+
+        letter-spacing: -4px;
+    }
+
+    .hero-content > p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .button {
+        min-height: 48px;
+    }
+
+    .hero-counter {
+        display: none;
+    }
+
+
+    /* QUICK MENU */
+
+    .quick-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-menu a {
+        min-height: 120px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    /* VEHICLES */
+
+    .vehicles {
+        padding: 90px 6%;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header h2 {
+        font-size: 53px;
+
+        letter-spacing: -4px;
+    }
+
+    .section-description {
+        margin-top: 35px;
+    }
+
+    .vehicle-card,
+    .vehicle-card-large {
+        height: 470px;
+    }
+
+    .vehicle-content {
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+    }
+
+    .vehicle-content h3 {
+        font-size: 43px;
+    }
+
+
+    /* ELECTRIC */
+
+    .electric {
+        min-height: 760px;
+    }
+
+    .electric-background {
+        background-position: 65% center;
+    }
+
+    .electric-content {
+        padding: 120px 7%;
+    }
+
+    .electric-content h2 {
+        font-size: 57px;
+
+        letter-spacing: -4px;
+    }
+
+    .electric-content p {
+        font-size: 13px;
+    }
+
+    .electric-stats {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        bottom: 25px;
+    }
+
+    .electric-stats div {
+        display: none;
+    }
+
+    .electric-stats div:first-child {
+        display: flex;
+    }
+
+
+    /* CONFIGURATOR */
+
+    .configurator-content {
+        padding: 85px 8%;
+
+        min-height: 580px;
+    }
+
+    .configurator-content h2 {
+        font-size: 54px;
+
+        letter-spacing: -4px;
+    }
+
+    .configurator-meta {
+        margin-top: 45px;
+    }
+
+    .configurator-visual {
+        min-height: 430px;
+    }
+
+    .visual-circle {
+        width: 350px;
+        height: 350px;
+    }
+
+
+    /* TECHNOLOGY */
+
+    .technology {
+        padding: 90px 7%;
+    }
+
+    .technology-header {
+        display: block;
+    }
+
+    .technology-header h2 {
+        font-size: 57px;
+
+        letter-spacing: -4px;
+    }
+
+    .technology-header > p {
+        margin-top: 30px;
+    }
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-grid article {
+        min-height: 280px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    /* OFFERS */
+
+    .offers {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-image {
+        min-height: 400px;
+    }
+
+    .offers-content {
+        padding: 80px 8%;
+    }
+
+    .offers-content h2 {
+        font-size: 54px;
+
+        letter-spacing: -4px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding: 70px 6%;
+    }
+
+    .contact-inner {
+        display: block;
+
+        padding: 40px 25px;
+    }
+
+    .contact h2 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+    .contact-button {
+        margin-top: 40px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 65px 7% 25px;
+    }
+
+    .footer-top {
+        display: block;
+    }
+
+    .footer-social {
+        margin-top: 30px;
+
+        flex-wrap: wrap;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    /* FLOATING */
+
+    .feedback {
+        width: 36px;
+        height: 105px;
+
+        font-size: 8px;
+    }
+
+    .assistant {
+        width: 61px;
+        height: 61px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .hero-content h1 {
+        font-size: 49px;
+    }
+
+    .section-header h2,
+    .technology-header h2 {
+        font-size: 48px;
+    }
+
+    .electric-content h2 {
+        font-size: 49px;
+    }
+
+    .configurator-content h2 {
+        font-size: 47px;
+    }
+
+    .offers-content h2 {
+        font-size: 47px;
+    }
+
+    .vehicle-card,
+    .vehicle-card-large {
+        height: 430px;
+    }
+
+}
